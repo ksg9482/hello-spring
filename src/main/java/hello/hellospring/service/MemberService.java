@@ -5,10 +5,12 @@ import hello.hellospring.domain.repository.MemberRepository;
 import hello.hellospring.domain.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional //트랜잭션 단위로 실행해서 정상 종료되면 커밋. 아니면 롤백.
 public class MemberService {
     private final MemberRepository memberRepository;
 
